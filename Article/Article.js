@@ -131,7 +131,7 @@ const data = [{
 */
 
 
-const componentCreate = (obj) => {
+const componentCreate = obj => {
 
   //making elements
 
@@ -146,10 +146,10 @@ const componentCreate = (obj) => {
   article.classList.add('article');
   date.classList.add('date');
   expandButton.classList.add('expandButton');
+
   //adding event listener for expandButton
 
   expandButton.addEventListener('click',(event) =>{
-      article.classList.toggle('article');
       article.classList.toggle('article-open');
   });
   //assinging children elements
@@ -166,6 +166,7 @@ const componentCreate = (obj) => {
   paragraph1.innerHTML = obj.firstParagraph;
   paragraph2.innerHTML = obj.secondParagraph;
   paragraph3.innerHTML = obj.thirdParagraph;
+  expandButton.innerHTML = 'expand button';
 
   //returning finished component
   return article;

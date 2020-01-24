@@ -43,7 +43,7 @@ let menuComponentCreate = (array) => {
   menu.classList.add('menu');
   //making a list element for each item in the array passed through menuComponentCreate
   for (i = 0; i < array.length; i++) {
-    let l = document.createElement('l');
+    let l = document.createElement('li');
     //assigning the inner html to be equal to the item inside the array we are curently evaluating
     l.innerHTML = array[i];
     //appending that list item to the ul element
@@ -53,8 +53,8 @@ let menuComponentCreate = (array) => {
   //selecting the menu-button class
   let menuButton = document.querySelector('.menu-button');
   //adding event listener to toggle classes
-  menuButton.addEventListener('click', (event) =>{
-    menu.classList.toggle('menu');
+  menuButton.addEventListener('click', (event) => {
+
     menu.classList.toggle('menu--open');
   });
   //appending the ul to the menu
@@ -65,8 +65,8 @@ let menuComponentCreate = (array) => {
 
 };
 //selecting the header
-let header = document.querySelector('.header')
+let body = document.querySelector('body');
 //creating a variable to append to the header
 let menu_component = menuComponentCreate(menuItems);
 //appending variable to header
-header.appendChild(menu_component);
+body.prepend(menu_component);
